@@ -1,0 +1,67 @@
+<section class="contact-us" id="contactUs">
+  <div class="container text-center">
+    <h1 class="jumbotron-heading">Contact Us</h1>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <!-- form goes here -->
+      <form (ngSubmit)="processForm()" #contactUs="ngForm">
+        <!-- name -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="Your Name"
+            [(ngModel)]="name"
+            required
+            minlength="3"
+            #nameInput="ngModel">
+          <small id="nameHelp" *ngIf="nameInput.invalid && nameInput.dirty" class="form-text is-error">Name is required
+            and needs to be at least 3 characters long.
+          </small>
+        </div>
+        <!-- email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Your Email"
+            [(ngModel)]="email"
+            required
+            email
+            #emailInput="ngModel">
+          <small id="emailHelp"  *ngIf="emailInput.invalid && emailInput.dirty" class="form-text is-error">
+            Needs to be a valid email.
+          </small>
+        </div>
+        <!-- message -->
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            class="form-control"
+            name="message"
+            id="message"
+            placeholder="Your message"
+            [(ngModel)]="message"
+            required
+            minlength="3"
+            #messageInput="ngModel"></textarea>
+          <small id="messageHelp"  *ngIf="messageInput.invalid && messageInput.dirty"
+                 class="form-text is-error">
+            Your message is required!
+          </small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg text-center" [disabled]="!contactUs.dirty && !contactUs.valid">Submit</button>
+      </form>
+    </div>
+  </section>
+
+</section>
+

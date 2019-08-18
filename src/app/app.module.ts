@@ -12,6 +12,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PartnersComponent } from './partners/partners.component';
 import { ContactComponent } from './contact/contact.component';
 import {DeviceDetectorService} from '../core/device-detector.service';
+import {ContactService} from '../core/contact.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import {DeviceDetectorService} from '../core/device-detector.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [DeviceDetectorService],
+  providers: [DeviceDetectorService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

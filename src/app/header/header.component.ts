@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DeviceDetectorService } from 'ngx-device-detector';
+import {DeviceDetectorService} from '../../core/device-detector.service';
+
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,8 @@ import { DeviceDetectorService } from 'ngx-device-detector';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isMobile: boolean;
-  isDesktop: boolean;
   constructor(public deviceService: DeviceDetectorService) { }
 
   ngOnInit() {
-    this.isMobile = this.deviceService.isMobile();
-    this.isDesktop = this.deviceService.isDesktop();
   }
 }

@@ -13,6 +13,7 @@ import { PartnersComponent } from './partners/partners.component';
 import { ContactComponent } from './contact/contact.component';
 import {DeviceDetectorService} from '../core/device-detector.service';
 import {ContactService} from '../core/contact.service';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {ContactService} from '../core/contact.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DeviceDetectorModule.forRoot()
   ],
   providers: [DeviceDetectorService, ContactService],
   bootstrap: [AppComponent]

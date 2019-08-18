@@ -1,5 +1,5 @@
 <header>
-    <nav *ngIf="deviceDetectorService.isDesktop; else mobile;">
+    <nav *ngIf="deviceService.isDesktop()" class="desktop">
       <h2><a href="#" class="pull-left">
         <img src="assets/images/logo_2-1.png" alt="Logo" class="logo"/>
       </a></h2>
@@ -9,8 +9,7 @@
         <li><a href="#contactUs">Contact Us</a></li>
       </ul>
     </nav>
-  <ng-template #mobile>
-    <nav class="navbar navbar-expand-md navbar-dark mb-4 mobile-nav">
+    <nav class="navbar navbar-expand-md navbar-dark mb-4 mobile-nav" *ngIf="deviceService.isMobile()">
         <img src="assets/images/logo_2-1.png" alt="Logo" class="logo-mobile"/>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,5 +28,4 @@
         </ul>
       </div>
     </nav>
-  </ng-template>
 </header>

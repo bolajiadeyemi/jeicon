@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   }
 
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize', [])
   onResize() {
     this.deviceDetector.widthChange.emit(document.documentElement.clientWidth);
   }

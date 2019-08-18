@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PartnersComponent } from './partners/partners.component';
 import { ContactComponent } from './contact/contact.component';
+import {DeviceDetectorService} from '../core/device-detector.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DeviceDetectorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

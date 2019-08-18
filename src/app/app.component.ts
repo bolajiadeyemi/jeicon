@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {DeviceDetectorService} from '../core/device-detector.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'jeicon';
+
+  constructor(private readonly deviceDetector: DeviceDetectorService,
+  ) {
+
+  }
+
+  ngOnInit(): void {
+  }
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.deviceDetector.widthChange.emit(document.documentElement.clientWidth);
+  }
 }

@@ -6,6 +6,10 @@
 /*a:link, a:visited { color: #DC6903; }
 a:focus, a:hover, a:active { color: #F9AB33; }*/
 
+body{
+  margin: 0 !important;
+}
+
 a {
   text-decoration: none !important;
   border-bottom: 1px dotted;

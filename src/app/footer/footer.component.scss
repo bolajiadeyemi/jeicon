@@ -3,7 +3,12 @@
   color: white !important;
   height: 4em;
   text-align: center;
-  /*padding: 1em;*/
   padding-top: 3rem;
   padding-bottom: 3rem;
+  margin-bottom: 0;
+
+  & p {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+  }
 }
